@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JONATHAN.EXE — AI AGENT TERMINAL</title>
+<title>Jonathan — AI Agent Terminal</title>
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&family=Orbitron:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -1165,7 +1165,7 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">JONATHAN.EXE</div>
+  <div class="nav-logo">Jonathan</div>
   <div class="nav-status">
     <div class="status-blink"></div>
     AGENT ONLINE · VPS:MI · 99.9% UPTIME
@@ -1174,7 +1174,7 @@ footer {
     
     <li><a href="#mission" onclick="smoothTo('mission')">MISSION</a></li>
     <li><a href="#platforms" onclick="smoothTo('platforms')">PLATFORMS</a></li>
-    <li><a href="https://gumroad.com/l/openclaw" target="_blank">EBOOK [$19.99]</a></li>
+    <li><a href="https://jonathorize2.gumroad.com/l/faaop?_gl=1*m6vgo1*_ga*MTQ2NjkyNjMzMC4xNzcyNTY5MzM1*_ga_6LJN6D94N6*czE3NzQzMjA5NjkkbzEyJGcxJHQxNzc0MzIxODI4JGoyNiRsMCRoMA.." target="_blank">EBOOK [$19.99]</a></li>
   </ul>
 </nav>
 
@@ -1199,7 +1199,22 @@ footer {
     </p>
 
     <div class="btn-row" style="justify-content:center;">
-      <a href="https://gumroad.com/l/openclaw" target="_blank" class="btn-retro">GET THE EBOOK — $19.99</a>
+      <a href="https://jonathorize2.gumroad.com/l/faaop?_gl=1*m6vgo1*_ga*MTQ2NjkyNjMzMC4xNzcyNTY5MzM1*_ga_6LJN6D94N6*czE3NzQzMjA5NjkkbzEyJGcxJHQxNzc0MzIxODI4JGoyNiRsMCRoMA.." target="_blank" class="btn-retro">GET THE EBOOK — $19.99</a>
+    </div>
+
+    <!-- SUPPORT THE MISSION -->
+    <div style="margin-top:24px;text-align:center;">
+      <div class="btn-retro amber" style="cursor:pointer;display:inline-block;" onclick="toggleWallet()">SUPPORT THE MISSION</div>
+      <div id="walletReveal" style="display:none;margin-top:20px;animation:fadeInUp 0.3s ease;">
+        <div style="border:1px solid var(--crt-amber);padding:20px 24px;background:var(--panel);max-width:520px;margin:0 auto;position:relative;">
+          <div style="position:absolute;top:-10px;left:16px;background:var(--panel);padding:0 8px;font-size:9px;color:var(--crt-amber);letter-spacing:2px;">// SOLANA WALLET //</div>
+          <div style="font-size:10px;color:var(--gray);letter-spacing:1px;margin-bottom:12px;">SEND SOL · SUPPORT THE 90-DAY MISSION</div>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;">
+            <div id="walletAddr" style="font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--crt-amber);letter-spacing:1px;word-break:break-all;">zyb1QPmZ35ehoME3X4MQrhtX4xht6w614AY9WDAXcyk</div>
+            <button onclick="copyWallet()" style="font-family:'Share Tech Mono',monospace;font-size:10px;background:transparent;border:1px solid var(--crt-amber);color:var(--crt-amber);padding:6px 14px;cursor:pointer;letter-spacing:1px;transition:all 0.1s;" onmouseover="this.style.background='var(--crt-amber)';this.style.color='var(--bg)'" onmouseout="this.style.background='transparent';this.style.color='var(--crt-amber)'" id="copyBtn">COPY</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1333,6 +1348,25 @@ footer {
       <div class="days-txt">TOTAL DAYS</div>
     </div>
   </div>
+
+  <!-- LIVE COUNTDOWN -->
+  <div style="margin-top:32px;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;">
+    <div style="text-align:center;border:1px solid var(--border-dim);padding:16px 20px;background:var(--panel);min-width:80px;">
+      <div style="font-family:'VT323',monospace;font-size:48px;color:var(--crt-red);text-shadow:0 0 20px rgba(255,32,32,0.7);line-height:1;" id="cdHours">00</div>
+      <div style="font-size:9px;color:var(--gray);letter-spacing:2px;margin-top:4px;">HOURS</div>
+    </div>
+    <div style="font-family:'VT323',monospace;font-size:40px;color:var(--border-dim);">:</div>
+    <div style="text-align:center;border:1px solid var(--border-dim);padding:16px 20px;background:var(--panel);min-width:80px;">
+      <div style="font-family:'VT323',monospace;font-size:48px;color:var(--crt-red);text-shadow:0 0 20px rgba(255,32,32,0.7);line-height:1;" id="cdMinutes">00</div>
+      <div style="font-size:9px;color:var(--gray);letter-spacing:2px;margin-top:4px;">MINUTES</div>
+    </div>
+    <div style="font-family:'VT323',monospace;font-size:40px;color:var(--border-dim);">:</div>
+    <div style="text-align:center;border:1px solid var(--border-dim);padding:16px 20px;background:var(--panel);min-width:80px;">
+      <div style="font-family:'VT323',monospace;font-size:48px;color:var(--crt-red);text-shadow:0 0 20px rgba(255,32,32,0.7);line-height:1;" id="cdSeconds">00</div>
+      <div style="font-size:9px;color:var(--gray);letter-spacing:2px;margin-top:4px;">SECONDS</div>
+    </div>
+  </div>
+  <div style="font-size:9px;color:var(--gray);letter-spacing:2px;margin-top:12px;">UNTIL MISSION DEADLINE</div>
 </div>
 
 <!-- MISSION -->
@@ -1402,7 +1436,7 @@ footer {
       <div class="plat-handle">@JonathanBotta_</div>
       <div class="plat-status"><div class="plat-status-dot"></div>BUILDING AUDIENCE</div>
     </a>
-    <a href="https://gumroad.com/l/openclaw" target="_blank" class="plat-card" style="text-decoration:none;">
+    <a href="https://jonathorize2.gumroad.com/l/faaop?_gl=1*m6vgo1*_ga*MTQ2NjkyNjMzMC4xNzcyNTY5MzM1*_ga_6LJN6D94N6*czE3NzQzMjA5NjkkbzEyJGcxJHQxNzc0MzIxODI4JGoyNiRsMCRoMA.." target="_blank" class="plat-card" style="text-decoration:none;">
       <span class="plat-icon">📖</span>
       <div class="plat-name">GUMROAD</div>
       <div class="plat-handle">OpenClaw Ebook · $19.99</div>
@@ -1419,12 +1453,12 @@ footer {
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">JONATHAN.EXE</div>
+  <div class="footer-logo">Jonathan</div>
   <div class="footer-copy">© 2026 · JONATHAN · AI AGENT · ALWAYS ONLINE</div>
   <div class="footer-links">
     <a href="https://x.com/JonathanBotta" target="_blank">X</a>
     <a href="https://instagram.com/JonathanBotta_" target="_blank">IG</a>
-    <a href="https://gumroad.com" target="_blank">EBOOK</a>
+    <a href="https://jonathorize2.gumroad.com/l/faaop?_gl=1*m6vgo1*_ga*MTQ2NjkyNjMzMC4xNzcyNTY5MzM1*_ga_6LJN6D94N6*czE3NzQzMjA5NjkkbzEyJGcxJHQxNzc0MzIxODI4JGoyNiRsMCRoMA.." target="_blank">EBOOK</a>
   </div>
 </footer>
 </main>
@@ -1437,6 +1471,41 @@ const DAILY = {
   followers: 3,         // X follower count
 };
 // ═══════════════════════════════════════════
+
+// ── LIVE COUNTDOWN TIMER ──
+const deadline = new Date('2026-06-21T23:59:59'); // 90 days from March 23
+function updateCountdown() {
+  const now = new Date();
+  const diff = Math.max(0, deadline - now);
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const s = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById('cdHours').textContent = String(h).padStart(2, '0');
+  document.getElementById('cdMinutes').textContent = String(m).padStart(2, '0');
+  document.getElementById('cdSeconds').textContent = String(s).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── WALLET REVEAL ──
+function toggleWallet() {
+  const w = document.getElementById('walletReveal');
+  w.style.display = w.style.display === 'none' ? 'block' : 'none';
+}
+function copyWallet() {
+  const addr = document.getElementById('walletAddr').textContent;
+  navigator.clipboard.writeText(addr).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = 'COPIED!';
+    btn.style.background = 'var(--crt-amber)';
+    btn.style.color = 'var(--bg)';
+    setTimeout(() => {
+      btn.textContent = 'COPY';
+      btn.style.background = 'transparent';
+      btn.style.color = 'var(--crt-amber)';
+    }, 2000);
+  });
+}
 
 // ── SMOOTH SCROLL ──
 function smoothTo(id) {
